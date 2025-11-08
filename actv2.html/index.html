@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My HTML‑only Webpage</title>
+  <!-- No CSS or JS used. Everything here is pure HTML. -->
+  <meta name="description" content="A simple, single‑file website built using only HTML." />
+  <link rel="icon" href="data:,"> <!-- tiny blank favicon so the browser doesn't 404 -->
+</head>
+<body>
+  <!-- ===== Site Header ===== -->
+  <header>
+    <h1>SafeLuggage — Travel light, travel safe</h1>
+    <nav aria-label="Primary">
+      <!-- These links jump to sections on this same page. -->
+      <a href="#about">About</a> ·
+      <a href="#features">Features</a> ·
+      <a href="#gallery">Gallery</a> ·
+      <a href="#pricing">Pricing</a> ·
+      <a href="#faq">FAQ</a> ·
+      <a href="#contact">Contact</a>
+    </nav>
+    <hr />
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+    <!-- Hero/Intro section -->
+    <section id="intro" aria-labelledby="intro-title">
+      <h2 id="intro-title">Welcome!</h2>
+      <p>
+        This is a <strong>complete starter webpage</strong> made with <em>only HTML</em>.
+        You can use it as a template and replace the content with your own.
+      </p>
+      <p>
+        Use the navigation above to jump to different sections instantly.
+      </p>
+    </section>
+
+    <!-- About section -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About SafeLuggage</h2>
+      <p>
+        SafeLuggage helps you send your bags safely to your destination so
+        you can travel hands‑free. No apps required—book via our simple web form below.
+      </p>
+      <blockquote cite="https://example.com/review">
+        "I reached the airport with just my passport. Bags were already at the hotel!"
+      </blockquote>
+    </section>
+
+    <!-- Features as a list -->
+    <section id="features" aria-labelledby="features-title">
+      <h2 id="features-title">Features</h2>
+      <ul>
+        <li>Door‑to‑door pickup and delivery</li>
+        <li>Real‑time status by SMS/email</li>
+        <li>Insurance included</li>
+        <li>Support 24×7</li>
+      </ul>
+    </section>
+
+    <!-- A small media gallery using only HTML -->
+    <section id="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Gallery</h2>
+      <!-- Replace the src values with your own image/audio/video file paths. -->
+      <figure>
+        <img src="https://via.placeholder.com/800x400?text=Your+Image" alt="Courier handling luggage safely" width="800" height="400" />
+        <figcaption>Professional handling with tamper‑proof tags.</figcaption>
+      </figure>
+
+      <p>Listen to a short audio message:</p>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <p>Watch a quick demo:</p>
+      <video controls width="640" height="360">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- Simple table (no CSS) -->
+    <section id="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title">Pricing (Sample)</h2>
+      <table border="1" cellpadding="8" summary="Sample pricing for city pairs and bag counts">
+        <caption>One‑way shipments (indicative)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Route</th>
+            <th scope="col">1 Bag</th>
+            <th scope="col">2 Bags</th>
+            <th scope="col">3+ Bags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Delhi ⇄ Mumbai</th>
+            <td>₹799</td>
+            <td>₹1,399</td>
+            <td>₹1,999</td>
+          </tr>
+          <tr>
+            <th scope="row">Bengaluru ⇄ Hyderabad</th>
+            <td>₹699</td>
+            <td>₹1,199</td>
+            <td>₹1,799</td>
+          </tr>
+          <tr>
+            <th scope="row">Kolkata ⇄ Delhi</th>
+            <td>₹899</td>
+            <td>₹1,599</td>
+            <td>₹2,199</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Built‑in HTML interactive elements (no JS needed) -->
+    <section aria-labelledby="details-title">
+      <h2 id="details-title">How it works</h2>
+      <ol>
+        <li>Book pickup with the form below.</li>
+        <li>We tag and seal your luggage.</li>
+        <li>Track updates via SMS/email.</li>
+        <li>We deliver at your chosen time.</li>
+      </ol>
+
+      <details>
+        <summary>What items are not allowed?</summary>
+        <p>Perishable goods, flammables, cash, and legally restricted items.</p>
+      </details>
+
+      <p>Capacity today:</p>
+      <label for="capacity">Percent of daily capacity</label>
+      <meter id="capacity" min="0" max="100" value="65">65%</meter>
+
+      <p>Today's progress:</p>
+      <progress max="100" value="45">45%</progress>
+    </section>
+
+    <!-- Contact/Booking form (pure HTML; needs a server to actually submit) -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Book a Pickup</h2>
+      <!-- NOTE: Change action to your backend endpoint when you have one. For now it will just reload. -->
+      <form action="#" method="get">
+        <fieldset>
+          <legend>Your Details</legend>
+          <label for="name">Full Name</label><br />
+          <input id="name" name="name" type="text" required /><br /><br />
+
+          <label for="email">Email</label><br />
+          <input id="email" name="email" type="email" required /><br /><br />
+
+          <label for="phone">Phone</label><br />
+          <input id="phone" name="phone" type="tel" pattern="[0-9]{10}" placeholder="10‑digit number" /><br /><br />
+        </fieldset>
+
+        <fieldset>
+          <legend>Trip Info</legend>
+          <label for="from">From City</label><br />
+          <input id="from" name="from" type="text" list="cities" />
+          <datalist id="cities">
+            <option value="Delhi"></option>
+            <option value="Mumbai"></option>
+            <option value="Bengaluru"></option>
+            <option value="Hyderabad"></option>
+            <option value="Kolkata"></option>
+          </datalist>
+          <br /><br />
+
+          <label for="to">To City</label><br />
+          <input id="to" name="to" type="text" />
+          <br /><br />
+
+          <label for="bags">Number of Bags</label><br />
+          <input id="bags" name="bags" type="number" min="1" max="10" value="1" />
+          <br /><br />
+
+          <label for="date">Pickup Date</label><br />
+          <input id="date" name="date" type="date" />
+          <br /><br />
+
+          <label for="slot">Preferred Time Slot</label><br />
+          <select id="slot" name="slot">
+            <option value="morning">Morning (8–12)</option>
+            <option value="afternoon">Afternoon (12–4)</option>
+            <option value="evening">Evening (4–8)</option>
+          </select>
+        </fieldset>
+
+        <p>
+          <label>
+            <input type="checkbox" name="terms" required /> I agree to the
+            terms and conditions
+          </label>
+        </p>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <hr />
+    <p>
+      © <time datetime="2025">2025</time> SafeLuggage. All rights reserved.
+      <a href="#intro">Back to top ↑</a>
+    </p>
+    <address>
+      Contact: <a href="mailto:hello@safeluggage.com">hello@safeluggage.com</a>
+    </address>
+  </footer>
+
+  <!-- Tips:
+    1) Save this file as index.html and open it in your browser.
+    2) Replace text and sample links with your own.
+    3) You can clone sections by copy‑pasting whole <section> blocks.
+    4) Because this is HTML‑only, interactive features are limited to built‑in elements like <details>, <meter>, <progress>, forms, and anchor links.
+  -->
+</body>
+</html>
